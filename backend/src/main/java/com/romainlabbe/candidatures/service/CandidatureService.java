@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.romainlabbe.candidatures.dto.CandidatureRequest;
 import com.romainlabbe.candidatures.dto.CandidatureResponse;
+import com.romainlabbe.candidatures.entity.Candidature;
 import com.romainlabbe.candidatures.mapper.CandidatureMapper;
 import com.romainlabbe.candidatures.repository.CandidatureRepository;
 
@@ -22,6 +24,11 @@ public class CandidatureService {
         .stream()
         .map(CandidatureMapper::toReponse)
         .toList();
+    }
+
+    public CandidatureResponse createCandidature(CandidatureRequest resquest){
+        Candidature saved = this.candidatureRepository.save(CandidatureMapper.toEntity(resquest));
+        return CandidatureMapper.toReponse(saved);
     }
 
 }

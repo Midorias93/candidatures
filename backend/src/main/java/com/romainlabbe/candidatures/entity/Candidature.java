@@ -36,7 +36,7 @@ public class Candidature {
     private CandidatureStatut statut;
 
     @Column(nullable = true)
-    private LocalDate date;
+    private LocalDate dateCandidature;
 
     @Column(nullable = true)
     private String lienOffre;
@@ -53,4 +53,14 @@ public class Candidature {
 
     @UpdateTimestamp
     private Instant UpdatedAt;
+
+    public Candidature(String entreprise, String poste, CandidatureStatut statut, LocalDate dateCandidature, String lienOffre, int salaire, String notes){
+        this.entreprise = entreprise;
+        this.poste = poste;
+        this.statut = statut;
+        this.dateCandidature = dateCandidature;
+        this.lienOffre = lienOffre;
+        this.salaire = salaire;
+        this.notes = notes;
+    }
 }

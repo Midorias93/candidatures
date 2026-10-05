@@ -9,6 +9,6 @@ public record CandidatureResponse(
     String entreprise,
     String poste,
     CandidatureStatut statut,
-    LocalDate date
+    LocalDate dateCandidature
 ) {}
 
