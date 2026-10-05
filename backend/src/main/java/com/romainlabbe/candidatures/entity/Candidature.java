@@ -21,7 +21,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "candidature")
 @Getter @Setter @NoArgsConstructor 
-public class Candidatures {
+public class Candidature {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,7 +33,7 @@ public class Candidatures {
     private String poste;
 
     @Enumerated(EnumType.STRING)
-    private Statut statut;
+    private CandidatureStatut statut;
 
     @Column(nullable = true)
     private LocalDate date;
@@ -53,8 +53,4 @@ public class Candidatures {
 
     @UpdateTimestamp
     private Instant UpdatedAt;
-    
-    public enum Statut {
-        ENVOYER, RELANCEE, ENTRETIEN, REFUS, OFFRE
-    }
 }
