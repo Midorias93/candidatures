@@ -13,7 +13,12 @@ public class CandidatureMapper {
             entity.getEntreprise(),
             entity.getPoste(),
             entity.getStatut(),
-            entity.getDateCandidature()
+            entity.getDateCandidature(),
+            entity.getLienOffre(),
+            entity.getSalaire(),
+            entity.getNotes(),
+            entity.getCreatedAt(),
+            entity.getUpdatedAt()
         );
     }
 
