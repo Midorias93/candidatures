@@ -67,11 +67,11 @@ public class CandidatureService {
             this.candidatureRepository.countByStatut(CandidatureStatut.ENTRETIEN),
             this.candidatureRepository.countByStatut(CandidatureStatut.REFUS),
             this.candidatureRepository.countByStatut(CandidatureStatut.OFFRE));
-        float tauxReponse = (totalParStatut.entretient() + totalParStatut.offre()) / total;
-        float tauxEntretien = (totalParStatut.entretient() + totalParStatut.refus() + totalParStatut.offre()) / total;
+        float tauxReponse = (totalParStatut.ENTRETIEN() + totalParStatut.OFFRE()) / total;
+        float tauxEntretien = (totalParStatut.ENTRETIEN() + totalParStatut.REFUS() + totalParStatut.OFFRE()) / total;
         List<Long> idRelancee = this.candidatureRepository.findByDateCandidatureBefore(LocalDate.now().minusWeeks(2)).stream().map(Candidature::getId).toList();
-        int salaireMax = this.candidatureRepository.findSalaireMax();
-        int salaireMin = this.candidatureRepository.findSalaireMin();
+        Long salaireMax = this.candidatureRepository.findSalaireMax();
+        Long salaireMin = this.candidatureRepository.findSalaireMin();
 
         return new StatsResponse(total, totalParStatut, tauxReponse, tauxEntretien, idRelancee, salaireMax,salaireMin);
     }

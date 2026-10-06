@@ -7,6 +7,6 @@ public record StatsResponse(
     float tauxReponse,
     float tauxEntretien,
     List<Long> idRelancee,
-    int salaireMax,
-    int salaireMin
+    Long salaireMax,
+    Long salaireMin
 ) {}

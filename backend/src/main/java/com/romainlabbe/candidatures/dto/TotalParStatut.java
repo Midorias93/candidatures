@@ -1,9 +1,9 @@
 package com.romainlabbe.candidatures.dto;
 
 public record TotalParStatut (
-    Long envoyer,
-    Long relancee,
-    Long entretient,
-    Long refus,
-    Long offre
+    Long ENVOYER,
+    Long RELANCEE,
+    Long ENTRETIEN,
+    Long REFUS,
+    Long OFFRE
 ) {}

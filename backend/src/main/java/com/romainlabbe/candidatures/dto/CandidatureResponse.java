@@ -12,9 +12,9 @@ public record CandidatureResponse(
     CandidatureStatut statut,
     LocalDate dateCandidature,
     String lienOffre,
-    int salaire,
+    Long salaire,
     String notes,
     Instant createdAt,
-    Instant UpdatedAt
+    Instant updatedAt
 ) {}
 

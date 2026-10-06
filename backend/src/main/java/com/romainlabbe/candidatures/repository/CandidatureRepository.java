@@ -15,10 +15,10 @@ public interface CandidatureRepository extends JpaRepository<Candidature, Long> 
     Long countByStatut(CandidatureStatut Statut);
 
     @Query("SELECT MAX(c.salaire) FROM Candidature c")
-    int findSalaireMax();
+    Long findSalaireMax();
 
     @Query("SELECT MIN(c.salaire) FROM Candidature c")
-    int findSalaireMin();
+    Long findSalaireMin();
 
     List<Candidature> findByDateCandidatureBefore(LocalDate dateCandidature);
 }

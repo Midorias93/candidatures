@@ -42,7 +42,7 @@ public class Candidature {
     private String lienOffre;
 
     @Column(nullable = true)
-    private int salaire;
+    private Long salaire;
     
     @Column(nullable = true)
     private String notes;
@@ -52,9 +52,9 @@ public class Candidature {
     private Instant createdAt;
 
     @UpdateTimestamp
-    private Instant UpdatedAt;
+    private Instant updatedAt;
 
-    public Candidature(String entreprise, String poste, CandidatureStatut statut, LocalDate dateCandidature, String lienOffre, int salaire, String notes){
+    public Candidature(String entreprise, String poste, CandidatureStatut statut, LocalDate dateCandidature, String lienOffre, Long salaire, String notes){
         this.entreprise = entreprise;
         this.poste = poste;
         this.statut = statut;
