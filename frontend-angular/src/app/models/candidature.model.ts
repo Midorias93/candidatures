@@ -13,6 +13,8 @@ export interface Candidature {
     updatedAt: string;
 };
 
+export type CandidaturePayload = Omit<Candidature, 'id' | 'createdAt' | 'updatedAt'>;
+
 export interface TotalParStatut {
   ENVOYER: number;
   RELANCEE: number;

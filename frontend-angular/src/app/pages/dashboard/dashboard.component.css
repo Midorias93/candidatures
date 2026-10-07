@@ -1,0 +1,33 @@
+.dashboard {
+  padding: 32px;
+  background: #f8f9fb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.dashboard__filters {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #f1f1f3;
+}
+
+.dashboard__pipeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
